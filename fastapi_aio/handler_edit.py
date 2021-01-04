@@ -6,6 +6,7 @@ from types import MappingProxyType
 
 from aiohttp.web import HTTPBadRequest, HTTPError, Response, View
 from lxml import etree
+from fastapi import FastAPI
 
 import exceptions_edit
 from common_edit import awaitable, py2xml, schema, xml2py
