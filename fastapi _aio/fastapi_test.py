@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 
-app = FastAPI(title="fastapi-aiohttp-xmlrpc")
+app = FastAPI(title="fastapi_aiohttp_xmlrpc")
 
 
 @app.get('/hello')
