@@ -1,2 +1,0 @@
-recursive-include aiohttp_xmlrpc *.xsd *.rng
-include README.rst
