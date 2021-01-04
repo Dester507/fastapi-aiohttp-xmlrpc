@@ -1,5 +1,5 @@
 import asyncio
-from client_edit import ServerProxy
+from fastapi_aio.client_edit import ServerProxy
 
 
 loop = asyncio.get_event_loop()

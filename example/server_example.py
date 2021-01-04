@@ -1,5 +1,5 @@
 from aiohttp import web
-import handler_edit
+from fastapi_aio import handler_edit
 
 
 class XMLRPCExample(handler_edit.XMLRPCView):
