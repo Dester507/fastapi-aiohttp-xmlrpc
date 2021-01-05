@@ -4,9 +4,9 @@ import aiohttp.client
 from lxml import etree
 from multidict import MultiDict
 
-import exceptions_edit
-from common_edit import py2xml, schema, xml2py
-from exceptions_edit import xml2py_exception
+from . import exceptions_edit
+from .common_edit import py2xml, schema, xml2py
+from .exceptions_edit import xml2py_exception
 
 
 log = logging.getLogger(__name__)

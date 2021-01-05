@@ -1,6 +1,6 @@
 from lxml import etree
 
-from common_edit import py2xml
+from .common_edit import py2xml
 
 
 __all__ = (
