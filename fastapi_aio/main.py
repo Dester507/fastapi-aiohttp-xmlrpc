@@ -1,15 +1,23 @@
-from fastapi import FastAPI
-from .handler_edit import XMLRPCView
+from fastapi import FastAPI, Request
+from msgpack_asgi import MessagePackMiddleware
+# from .handler_edit import XMLRPCView
 
 
-app = FastAPI(title="fastapi_aiohttp_xmlrpc")
+app = FastAPI(title="fastapi")
 
 
-class Foo(XMLRPCView):
+@app.get('/')
+def foo():
+    return {'msg': 'hello world'}
 
-    @app.get('/hello')
-    def hello_world(self):
-        return {'msg': 'Hello World!!!'}
 
-    def rpc_hello_world(self):
-        return {"msg": "Hello Wolrd"}
+@app.post('/name')
+async def goo(request: Request):
+    body = await request.json()
+    return {'Your name': body['name']}
+
+app = MessagePackMiddleware(app)
+
+
+
+
