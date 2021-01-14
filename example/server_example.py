@@ -18,6 +18,9 @@ class XMLRPCExample(handler_edit.XMLRPCView):
     def rpc_exception(self):
         raise Exception("YEEEEEE!!!")
 
+    def rpc_sumaa(self, a, b):
+        return a + b
+
 
 app = web.Application()
 app.router.add_route('*', '/', XMLRPCExample)

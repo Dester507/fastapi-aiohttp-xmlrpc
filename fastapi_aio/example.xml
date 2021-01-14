@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<methodCall>
+    <methodName>method_name</methodName> # Method Name
+    <params>
+        <param>
+            <value>
+                <string> # Value Type
+                    TEXT
+                </string>
+            </value>
+        </param>
+
+        <param>
+            <value>
+                <int> # Value Type
+                    NUMBER
+                </int>
+            </value>
+        </param>
+    </params>
+</methodCall>

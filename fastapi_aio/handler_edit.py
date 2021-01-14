@@ -6,7 +6,6 @@ from types import MappingProxyType
 
 from aiohttp.web import HTTPBadRequest, HTTPError, Response, View
 from lxml import etree
-from fastapi import FastAPI
 
 from . import exceptions_edit
 from .common_edit import awaitable, py2xml, schema, xml2py
@@ -132,6 +131,7 @@ class XMLRPCView(View, metaclass=XMLRPCViewMeta):
             method.__name__,
         )
 
+        # всі аргументи розапарсює в типах
         args = list(
             map(
                 xml2py,
@@ -173,9 +173,12 @@ class XMLRPCView(View, metaclass=XMLRPCViewMeta):
 
     @staticmethod
     def _parse_xml(xml_string):
+        print(xml_string)
         parser = etree.XMLParser(resolve_entities=False)
         root = etree.fromstring(xml_string, parser)
         schema.assertValid(root)
+        print(dir(root))
+        print(root.tag, root.getchildren()[1].getchildren()[0].getchildren()[0].getchildren()[0])
         return root
 
     @classmethod

@@ -3,15 +3,14 @@ from fastapi_aio.client_edit import ServerProxy
 
 
 loop = asyncio.get_event_loop()
-client = ServerProxy("http://localhost:8000", loop=loop)
+client = ServerProxy("http://localhost:8080", loop=loop)
 
 
 async def main():
-    print(await client.test())
 
     # Or via __getitem__
-    method = client['hello_world']
-    print(await method())
+    method = client['sumaa']
+    print(await method("TOL", "IK"))
 
     client.close()
 
